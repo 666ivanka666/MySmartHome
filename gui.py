@@ -5,6 +5,9 @@ from lights.gui import  LightsModule
 from security.gui import SecurityModule
 from temperature.gui import TemperatureModule
 from tv.gui import TVModule
+from settings.gui import SettingsModule
+from settings.gui import SettingsColour
+from datetime.gui import DatetimeModule
 
 
 class MySmartHome(tk.Tk):
@@ -58,6 +61,21 @@ class MySmartHome(tk.Tk):
         self.temperature_frame = TemperatureModule(self)
         self.temperature_frame.grid(row=0, column=1)
         self.notebook.add(self.temperature_frame, text="Temperature")
+
+        self.settings_frame = SettingsModule(self)
+        self.settings_frame.grid(row=0, column=1)
+        self.notebook.add(self.settings_frame, text="Settings")
+
+        self.colour_frame = SettingsColour(self)
+        self.colour_frame.grid(row=0, column=1)
+        self.notebook.add(self.colour_frame, text="Choose colour")
+
+        self.colour_frame = DatetimeModule(self)
+        self.colour_frame.grid(row=0, column=1)
+        
+
+
+
 
 
 root = MySmartHome()
